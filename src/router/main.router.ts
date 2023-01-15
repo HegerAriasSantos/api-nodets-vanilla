@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { IRouter } from "../modules/share";
+import { IRouter, Response } from "../modules/share";
 import routes from "./routes";
 
 export default class MainRouter implements IRouter {
@@ -8,11 +8,10 @@ export default class MainRouter implements IRouter {
 		res: ServerResponse<IncomingMessage>,
 	): void {
 		const entity = req.url?.split("/")[1] || "";
-		if (!entity || !routes.hasOwnProperty(entity)) {
-			res.statusCode = 404;
-			res.end();
-			return;
-		}
+		const resoponse = new Response();
+		if (!entity || !routes.hasOwnProperty(entity))
+			return resoponse.error(res, "Not found", 404);
+
 		routes[entity].manageRoutes(req, res);
 	}
 }
