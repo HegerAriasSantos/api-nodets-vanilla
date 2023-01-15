@@ -1,5 +1,5 @@
 export * from "./controller";
-export * from "./helper";
-export * from "./interface";
+export * from "./helpers";
+export * from "./interfaces";
 export * from "./repository";
 export * from "./entity";

@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { BookParams } from "../helper/params";
+import { BookParams } from "../helpers/params";
 import { IRouter, Response } from "../../share";
 import { IBookRepository } from "../repository";
 import bookRepository from "../repository/book.repository";
