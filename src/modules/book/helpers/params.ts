@@ -11,12 +11,12 @@ export class BookParams {
 		const urlSplited = url.split("/");
 		const params: IBookParams = {};
 		if (urlSplited.length <= 2) return params;
-		const bookId = Number(urlSplited[2] ?? "NaN");
+		const bookId = Number(urlSplited[2]);
 		if (Number.isNaN(bookId))
 			response.error(res, "bookId number is not a number", 400);
 		params.bookId = bookId;
 		if (urlSplited.length <= 4) return params;
-		const pageId = Number(urlSplited[4] ?? "NaN");
+		const pageId = Number(urlSplited[4]);
 		if (Number.isNaN(pageId))
 			response.error(res, "pageId number is not a number", 400);
 		params.pageId = pageId;
