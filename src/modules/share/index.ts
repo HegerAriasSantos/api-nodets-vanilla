@@ -1,4 +1,4 @@
-export * from "./interface";
-export * from "./adapter";
+export * from "./interfaces";
+export * from "./dbAdapters";
 export * from "./response";
-export * from "./helper";
+export * from "./helpers";
