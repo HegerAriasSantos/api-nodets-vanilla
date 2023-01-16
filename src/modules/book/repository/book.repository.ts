@@ -1,6 +1,7 @@
 import { IBookRepository } from ".";
-import { IAdapter, MysqlAdapter } from "../../";
+import { IAdapter } from "../../";
 import { IBook, IPage } from "../entity";
+import mysqlAdapter from "../../share/dbAdapters/adapters/mysql/mysql.adapter";
 
 class BookRepository implements IBookRepository {
 	Adapter: IAdapter;
@@ -31,5 +32,5 @@ class BookRepository implements IBookRepository {
 		});
 	}
 }
-const bookRepository = new BookRepository(new MysqlAdapter());
+const bookRepository = new BookRepository(mysqlAdapter);
 export default bookRepository;

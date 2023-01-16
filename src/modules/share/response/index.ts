@@ -12,7 +12,6 @@ export class Response {
 		res.end();
 	}
 	error(res: ServerResponse<IncomingMessage>, data: any, status: number) {
-		console.log("error", data, status);
 		res.writeHead(status, this.getHeaderByFormat());
 		res.write(this.getBodyFormat(data, "error"));
 		res.end();
@@ -27,7 +26,6 @@ export class Response {
 		if (format === "html") headers["Content-Type"] = "text/html";
 		if (format === "txt" || format === "text")
 			headers["Content-Type"] = "text/plain";
-		console.log(headers, "headers");
 		return headers;
 	}
 	getBodyFormat(data: any, format: string) {
@@ -38,7 +36,6 @@ export class Response {
 		if (format === "txt" || format === "text") return data[0].text;
 	}
 	getHtmlResponse(data: any) {
-		console.log(data[0], "data");
 		return `
     <!DOCTYPE html>
     <html lang="en">

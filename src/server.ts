@@ -1,5 +1,5 @@
-import http from "http";
-import dotenv from "dotenv";
+import * as http from "http";
+import * as dotenv from "dotenv";
 import { IRouter } from "./modules/share";
 export default class Server {
 	public port: number = Number(process.env.PORT) || 4300;

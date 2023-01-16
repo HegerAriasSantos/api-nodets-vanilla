@@ -32,13 +32,12 @@ class BookController implements IRouter {
 						this.getPage(response, res, bookId, pageId, format);
 						break;
 					default:
-						console.log("default");
 						response.error(res, "Endpoint not Found", 404);
 						break;
 				}
 				break;
 			default:
-				response.error(res, "Method not allowed", 200);
+				response.error(res, "Method not allowed", 405);
 				break;
 		}
 	}
